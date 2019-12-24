@@ -12,8 +12,7 @@ workflows:
                 condition: on_fail
                 steps:
                   - run:
-                      command: |
-                      echo 'when condition on_fail works'
+                      command: echo 'when condition on_fail works'
              - run:
                   name: Build Success
                   when: on_success
@@ -32,5 +31,4 @@ workflows:
              - run:
                   name: Build failed
                   when: on_fail
-                  command: |
-                    echo 'build failed'
+                  command: echo 'build failed'
