@@ -1,6 +1,8 @@
 version: 2.1
 jobs:
   notify-telegram:
+    docker:
+      - image: "circleci/node:9.6.1"
     steps:
     - telegram/notify:
           message: Custom notification message.
