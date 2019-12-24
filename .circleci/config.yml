@@ -13,4 +13,9 @@ workflows:
                 steps:
                     - telegram/notify:
                         message: notified after.
+             - unless:
+                condition: always
+                steps:
+                    - telegram/notify:
+                        message: notified after.
 
