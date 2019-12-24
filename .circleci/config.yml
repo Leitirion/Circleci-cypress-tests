@@ -1,8 +1,48 @@
 version: 2.1
+orbs:
+  # use Cypress orb from CircleCI registry
+  cypress: cypress-io/cypress@1.11.0
+
+executors:
+  mac:
+    macos:
+      xcode: "10.1.0"
+
 jobs:
-  build:
-    docker: 
-      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+  release:
+    executor: cypress/base-10
     steps:
-      - checkout # check out the code in the project directory
-      - run:  npm run cy_open
+      - attach_workspace:
+          at: ~/
+      - run: npm run cy_open
+
+workflows:
+  mac-build:
+    jobs:
+      # split into install + test jobs when Mac caching is correct
+      # https://github.com/cypress-io/circleci-orb/issues/98
+      - cypress/run:
+          name: Mac test
+          executor: mac
+          build: 'npm run build'
+          start: 'npm run start:ci'
+          record: true
+          group: 'Mac build'
+
+
+      # run on 2 machines using Chrome browser
+      - cypress/run:
+          name: '2 machines using Chrome'
+          # job will use workspace with code and dependencies
+          # installed by the "install" job
+          requires:
+            - Linux install
+          # use executor with Chrome installed
+          executor: cypress/browsers-chrome79
+          # use browser "chrome" for running tests
+          browser: chrome
+          record: true
+          parallel: true
+          parallelism: 2
+          group: '2x-chrome on CircleCI'
+          start: 'npm run cy_open'
