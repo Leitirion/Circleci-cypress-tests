@@ -3,15 +3,11 @@ version: 2.1
 orbs:
   telegram: woltsu/telegram@0.0.9
   cypress: cypress-io/cypress@1
-jobs:
-  build_and_notify:
-    executor: cibuilds/base:2019.10
-    steps:
-      - cypress/run # "run" job comes from "cypress" orb
-      - telegram/notify:
-          message: Custom notification message.
-          when: always
 workflows:
   build:
     jobs:
-      - build_and_notify
+      - cypress/run
+          post-steps:
+          - telegram notify:
+              message: notified after.
+
