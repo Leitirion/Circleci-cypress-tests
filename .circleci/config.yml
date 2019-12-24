@@ -11,6 +11,10 @@ orbs:
 workflows:
   build:
     jobs:
+      
       - cypress/run # "run" job comes from "cypress" orb
+     
       - telegram/notify:
           message: Custom notification message.
+           requires:
+            - cypress/run
