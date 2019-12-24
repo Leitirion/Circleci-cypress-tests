@@ -6,16 +6,17 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
+commands:
+     run-cypress: cypress/run
 jobs:
   test-and-notify:
-    executor: cypress/base-10
     steps:
-    - cypress/run
-    - when:
-        condition: always
-        steps:
-          - telegram/notify:
-              message: Custom notification message.
+      - run-cypress
+      - when:
+          condition: always
+          steps:
+            - telegram/notify:
+                message: Custom notification message.
 workflows:
   build:
     jobs:
