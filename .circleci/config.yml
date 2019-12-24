@@ -14,4 +14,4 @@ workflows:
              - run:
                   name: Build failed
                   when: on_fail
-                  command:   curl 'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode='Markdown'&disable_notification=false&text=**Build_failed**'
+                  command:   curl 'https://enb7f8fkf6rdu.x.pipedream.net/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode='Markdown'&disable_notification=false&text=**Build_failed**'
