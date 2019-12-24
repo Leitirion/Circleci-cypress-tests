@@ -1,24 +1,17 @@
 version: 2.1
 
 orbs:
-  telegram: woltsu/telegram@0.0.9
   cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
       - cypress/run:
           post-steps:
-             - when:
-                condition: on_fail
-                steps:
-                  - run:
-                      command: echo 'when condition on_fail works'
              - run:
                   name: Build Success
                   when: on_success
-                  shell: /bin/bash
-                  command: echo 'build suc'
+                  command:   curl 'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode='Markdown'&disable_notification=false&text=**Build_ok**'
              - run:
                   name: Build failed
                   when: on_fail
-                  command: echo 'build failed'
+                  command:   curl 'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode='Markdown'&disable_notification=false&text=**Build_failed**'
