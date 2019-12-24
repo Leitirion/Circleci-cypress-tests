@@ -10,8 +10,8 @@ workflows:
              - run:
                   name: Build Success
                   when: on_success
-                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<b><a href='$CIRCLE_BUILD_URL'>Build</a> ok</b> ✅"
+                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<b><a href='$CIRCLE_BUILD_URL'>Build</a> ok</b> ✅"
              - run:
                   name: Build failed
                   when: on_fail
-                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<b><a href='$CIRCLE_BUILD_URL'>Build</a> failed</b> ❌"
+                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<b><a href='$CIRCLE_BUILD_URL'>Build</a> failed</b> ❌"
