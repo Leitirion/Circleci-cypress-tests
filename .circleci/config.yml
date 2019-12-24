@@ -4,6 +4,14 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
+    triggers:
+      - schedule:
+          cron: "H 4 * * *"
+          filters:
+            branches:
+              only:
+                - master
+                - beta
     jobs:
       - cypress/run:
           post-steps:
