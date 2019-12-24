@@ -1,11 +1,15 @@
 version: 2.1
 jobs:
-  notify-telegram:
+  test-and-notify:
     docker:
       - image: "circleci/node:9.6.1"
     steps:
-    - telegram/notify:
-          message: Custom notification message.
+    - cypress/run
+    - when:
+      condition: always
+      steps:
+        - telegram/notify:
+            message: Custom notification message.
   
   
 orbs:
@@ -19,7 +23,6 @@ workflows:
   build:
     jobs:
       
-      - cypress/run # "run" job comes from "cypress" orb
-      - notify-telegram:
-          requires:
-           - cypress/run 
+
+      - test-and-notify
+          
