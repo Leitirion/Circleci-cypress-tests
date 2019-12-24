@@ -9,13 +9,13 @@ workflows:
       - cypress/run:
           post-steps:
              - when:
-                condition: always
+                condition: on_fail
                 steps:
                     - telegram/notify:
-                        message: notified after.
-             - unless:
-                condition: always
+                        message:  build failed.
+             - when:
+                condition: on_success
                 steps:
                     - telegram/notify:
-                        message: notified after.
+                        message: build succeded.
 
