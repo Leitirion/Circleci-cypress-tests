@@ -11,21 +11,12 @@ workflows:
              - run:
                   name: Build Success
                   when: on_success
-                  command: |
-                      echo 'ok'
+                  command: 
+                    - telegram/notify:
+                        message:  build succeeded.
              - run:
                   name: Build failed
                   when: on_fail
-                  command: |
-                      echo 'fail'
-             - when:
-                condition: on_fail
-                steps:
+                  command: 
                     - telegram/notify:
                         message:  build failed.
-             - when:
-                condition: on_success
-                steps:
-                    - telegram/notify:
-                        message: build succeded.
-
