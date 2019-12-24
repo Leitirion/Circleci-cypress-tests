@@ -6,10 +6,10 @@ jobs:
     steps:
     - cypress/run
     - when:
-      condition: always
-      steps:
-        - telegram/notify:
-            message: Custom notification message.
+        condition: always
+        steps:
+          - telegram/notify:
+              message: Custom notification message.
   
   
 orbs:
