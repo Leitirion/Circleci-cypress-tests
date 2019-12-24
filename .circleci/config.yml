@@ -1,4 +1,6 @@
 version: 2.1
+
+  
 orbs:
   telegram: woltsu/telegram@0.0.9
   # "cypress-io/cypress@1" installs the latest published
@@ -6,21 +8,9 @@ orbs:
   # the strict explicit version "cypress-io/cypress@1.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
-commands:
-     run-cypress: cypress/run
-jobs:
-  test-and-notify:
-    docker:
-      - image: "circleci/node:9.6.1"
-    steps:
-      - run-cypress
-      - when:
-          condition: always
-          steps:
-            - telegram/notify:
-                message: Custom notification message.
 workflows:
   build:
     jobs:
-      - test-and-notify
-          
+      - cypress/run # "run" job comes from "cypress" orb
+      - telegram/notify:
+          message: Custom notification message.
