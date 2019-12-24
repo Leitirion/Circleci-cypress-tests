@@ -17,17 +17,7 @@ workflows:
                   name: Build Success
                   when: on_success
                   shell: /bin/bash
-                  command: |
-                           command: |
-        if [ -z "$<< parameters.telegram-bot-token >>" ]; then
-          echo "Please input your TELEGRAM_BOT_TOKEN value in the CircleCI settings for this project or provide another environmental variable name as a parameter for 'notify' command"
-        elif [ -z "$<< parameters.telegram-chat-id >>" ]; then
-          echo "Please input your TELEGRAM_CHAT_ID value in the CircleCI settings for this project or provide another environmental variable name as a parameter for 'notify' command"
-        else
-          curl "https://api.telegram.org/bot$<<parameters.telegram-bot-token>>/sendMessage?chat_id=$<<parameters.telegram-chat-id>>&parse_mode=<<parameters.parse_mode>>&disable_notification=<<parameters.disable_notification>>&text=<<parameters.message>>"
-        fi
-      
-      
+                  command: echo 'build suc'
              - run:
                   name: Build failed
                   when: on_fail
