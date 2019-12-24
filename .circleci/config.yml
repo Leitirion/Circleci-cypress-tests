@@ -1,16 +1,17 @@
 version: 2.1
 
-  
 orbs:
   telegram: woltsu/telegram@0.0.9
-  # "cypress-io/cypress@1" installs the latest published
-  # version "1.x.y" of the orb. We recommend you then use
-  # the strict explicit version "cypress-io/cypress@1.x.y"
-  # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@1
-workflows:
-  build:
-    jobs:
+jobs:
+  build_and_notify:
+    executor: cibuilds/base:2019.10
+    steps:
       - cypress/run # "run" job comes from "cypress" orb
       - telegram/notify:
           message: Custom notification message.
+          when: always
+workflows:
+  build:
+    jobs:
+      - build_and_notify
