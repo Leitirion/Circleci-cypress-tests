@@ -1,4 +1,10 @@
 version: 2.1
+jobs:
+  - notify-telegram:
+    steps:
+    - telegram/notify:
+          message: Custom notification message.
+          
 
   
 orbs:
@@ -13,8 +19,6 @@ workflows:
     jobs:
       
       - cypress/run # "run" job comes from "cypress" orb
-     
-      - telegram/notify:
-          message: Custom notification message.
-           requires:
-            - cypress/run
+      - notify-telegram:
+          requires:
+           - cypress/run 
