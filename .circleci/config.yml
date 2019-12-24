@@ -10,6 +10,7 @@ workflows:
           post-steps:
              - when:
                 condition: always
+                steps:
                     - telegram/notify:
                         message: notified after.
 
