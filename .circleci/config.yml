@@ -1,17 +1,11 @@
 version: 2.1
 orbs:
-  # use Cypress orb from CircleCI registry
-  cypress: cypress-io/cypress@1.11.0
-
-executors:
-  mac:
-    macos:
-      xcode: "10.1.0"
-
-jobs:
-  release:
-    executor: cypress/base-10
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: npm run cy_open
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/run # "run" job comes from "cypress" orb
