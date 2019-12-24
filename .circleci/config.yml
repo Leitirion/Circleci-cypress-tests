@@ -7,7 +7,7 @@ workflows:
   build:
     jobs:
       - cypress/run:
-        post-steps:
-          - telegram/notify:
-            message: notified after.
+          post-steps:
+            - telegram/notify:
+                message: notified after.
 
