@@ -10,6 +10,8 @@ commands:
      run-cypress: cypress/run
 jobs:
   test-and-notify:
+    docker:
+      - image: "circleci/node:9.6.1"
     steps:
       - run-cypress
       - when:
