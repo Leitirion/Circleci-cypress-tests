@@ -1,11 +1,10 @@
 version: 2.1
 jobs:
-  - notify-telegram:
+  notify-telegram:
     steps:
     - telegram/notify:
           message: Custom notification message.
-          
-
+  
   
 orbs:
   telegram: woltsu/telegram@0.0.9
