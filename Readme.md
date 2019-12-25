@@ -1,37 +1,27 @@
-
 ### Cypress UI  automation project
+[![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
 
-### Badges
-    
-
-### Table of Contents (todo: add  Links!!)
+### Table of Contents
 
 - Getting Started
- - Links to { projectName}'s entrypoint / requirements
+- Links to requirements
 - Installation
 - Running (locally / CI)
 - Examples/How to write tests
 
 ### Getting Started
-
-- Links to { projectName}'s entrypoint / requirements
-
+[TBD]
 
 ### Installation
- 1. ``` npm i ```
- 2. ``` smth else? ```
+ 1. 
+ npm i 
 
 ###  Running (locally / CI)
-    1. Change cypress.env.json 
-    - ```URL```
-    2. ``` npm run cy:test ```
+[TBD]
 
 ### Reporting
- 
+ [TBD]
  
 
 ### Examples/How to write tests
-
-### Status for last run Cypress test
-
-[![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
+[TBD]
