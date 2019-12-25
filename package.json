@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:test": "cypress run",
-    "cy:open": "cypress open"
+    "cy:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -22,3 +21,5 @@
     "cypress": "^3.8.0"
   }
 }
+
+
