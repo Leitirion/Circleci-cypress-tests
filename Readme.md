@@ -1,4 +1,3 @@
-[![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
 
 ### Cypress UI  automation project
 
@@ -32,3 +31,7 @@
 
 
 ### Examples/How to write tests
+
+### Status for last run Cypress test
+
+[![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
