@@ -13,8 +13,7 @@
 [TBD]
 
 ### Installation
- 1. 
- npm i 
+ 1. npm i 
 
 ###  Running (locally / CI)
 [TBD]
