@@ -4,13 +4,17 @@
 ### Table of Contents
 
 - Getting Started
-- Links to requirements
+- Maintainers
 - Installation
 - Running (locally / CI)
 - Examples/How to write tests
 
 ### Getting Started
 [TBD]
+
+### Maintainers
+github.com/mikementor
+github.com/leitirion
 
 ### Installation
  1. npm i 
