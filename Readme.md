@@ -6,11 +6,11 @@
 - Getting Started
 - Maintainers:
 
-  [github.com/mikementor](github.com/mikementor)
+  [github.com/mikementor](https://github.com/mikementor)
 
   	
 		
-  [github.com/leitirion](github.com/leitirion)
+  [github.com/leitirion](https://github.com/leitirion)
 	 
 - Installation
 - Running (locally / CI)
