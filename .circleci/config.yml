@@ -18,11 +18,14 @@ workflows:
                   name: Build Success
                   when: on_success
                   command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
-              - store_test_results:
-                  path: multiple-results
-              - store_artifacts:
+              steps:
+                  - checkout
+                - run:
+                  name: Running E2E tests
+                  command: cypress run
+                - store_artifacts:
                   path: cypress/videos
-              - store_artifacts:
+                - store_artifacts:
                   path: cypress/screenshots
              
              - run:
