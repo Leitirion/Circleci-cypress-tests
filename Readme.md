@@ -4,11 +4,14 @@
 ### Table of Contents
 
 - Getting Started
-- Maintainers:[github.com/mikementor](github.com/mikementor)
+- Maintainers:
+
+  [github.com/mikementor](github.com/mikementor)
 
   	
 		
- 	 github.com/leitirion
+  [github.com/leitirion](github.com/leitirion)
+	 
 - Installation
 - Running (locally / CI)
 - Examples/How to write tests
