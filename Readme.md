@@ -1,5 +1,6 @@
 ### Cypress UI  automation project
 [![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
+
 [![codecov](https://codecov.io/gh/Leitirion/My-circleci-cypress-ui-automation/branch/master/graph/badge.svg)](https://codecov.io/gh/Leitirion/My-circleci-cypress-ui-automation)
 
 ### Table of Contents
