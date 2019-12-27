@@ -23,7 +23,15 @@
     "cypress": "^3.8.1",
     "eslint": "^6.8.0",
     "eslint-plugin-cypress": "^2.8.1",
+    "husky": "^3.1.0",
     "istanbul-lib-coverage": "^3.0.0",
     "nyc": "^15.0.0"
-  }
+  },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm test",
+        "pre-push": "npm test",
+        "...": "..."
+      }
+    }
 }
