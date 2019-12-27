@@ -6,10 +6,11 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-          record: true
       - codecov/upload:
                   token: $CODECOV_TOKEN
+      - cypress/run:
+          record: true
+      
           post-steps:
              - run:
                   name: Build Success
