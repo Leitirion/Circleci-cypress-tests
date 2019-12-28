@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    “pretest”: “./node_modules/.bin/eslint --ignore-path 
+    .gitignore . --fix”
   },
   "repository": {
     "type": "git",
@@ -27,10 +29,10 @@
     "istanbul-lib-coverage": "^3.0.0",
     "nyc": "^15.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "eslint src --fix",
-      "...": "..."
-    }
-  }
+
+    “husky”: {
+       “hooks”: {
+         “pre-commit”: “npm run pretest”
+       }
+      }
 }
