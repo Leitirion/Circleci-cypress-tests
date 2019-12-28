@@ -10,14 +10,11 @@ orbs:
 workflows:
   build:
     jobs:
+      - codecov/upload:
+          token: $CODECOV_TOKEN
       - cypress/run:
           record: true
-      steps:
-            - codecov/upload:
-                  token: $CODECOV_TOKEN
-      
           post-steps:
-              
              - run:
                   name: Build Success
                   when: on_success
