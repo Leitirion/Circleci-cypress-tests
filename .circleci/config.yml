@@ -12,8 +12,10 @@ workflows:
     jobs:
       - cypress/run:
           record: true
-    - codecov/upload:
-          token: $CODECOV_TOKEN
+      build:   
+          steps:
+            - codecov/upload:
+                token: $CODECOV_TOKEN
       
           post-steps:
              - run:
