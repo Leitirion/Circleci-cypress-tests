@@ -10,6 +10,8 @@ orbs:
 workflows:
   build:
     jobs:
+      build:
+      steps:
       - codecov/upload:
           token: $CODECOV_TOKEN
       - cypress/run:
