@@ -1,5 +1,7 @@
 version: 2.1
+
 orbs:
+  cypress: cypress-io/cypress@1
   codecov: codecov/codecov@1.0.2
 jobs:
   build:
@@ -7,8 +9,7 @@ jobs:
       - codecov/upload:
           token: $CODECOV_TOKEN
 
-orbs:
-  cypress: cypress-io/cypress@1
+
 workflows:
   build:
     jobs:
