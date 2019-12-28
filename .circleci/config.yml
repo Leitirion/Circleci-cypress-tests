@@ -26,7 +26,7 @@ workflows:
       build:
         steps:
           - codecov/upload:
-            token: $CODECOV_TOKEN                    
+              token: $CODECOV_TOKEN                    
   nightly:
     triggers:
       - schedule:
