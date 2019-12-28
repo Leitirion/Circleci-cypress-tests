@@ -1,13 +1,24 @@
 {
-    "plugins": [
-      "cypress"
-    ],
-    "rules": {
-        "cypress/no-assigning-return-values": "error",
-        "cypress/no-unnecessary-waiting": "error",
-        "cypress/assertion-before-screenshot": "warn",
-      },
-    "extends": [
-        "plugin:cypress/recommended"
-      ]
+  "env": {
+    "node" : true,
+    "es6": true,
+    "mocha": true,
+    "amd": true
+  },
+  "globals": {
+    "cy": false,
+    "Cypress": false,
+    "describe": false,
+    "context": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "it": false,
+    "assert": false,
+    "expect": false
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
   }
+}
