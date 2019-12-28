@@ -16,12 +16,14 @@ workflows:
              - run:
                   name: Build Success
                   when: on_success
-                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
+                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅" <a href='https://codecov.io/api/pub/{gh|gl|bb}/Leitirion//settings'>
              - run:
                   name: Build failed
                   when: on_fail
                   command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
-              - run: curl -s https://codecov.io/bash | bash         
+              - run:
+                  name: Send to Codecov
+                  command: "bash <(curl -s https://codecov.com/bash) -t $CODECOV_TOKEN"    
   nightly:
     triggers:
       - schedule:
