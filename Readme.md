@@ -1,6 +1,5 @@
 ### Cypress UI  automation project
-[![CircleCI](https://circleci.com/gh/Leitirion/Project1.svg?style=svg)](https://circleci.com/gh/Leitirion/Project1)
-
+[![CircleCI](https://circleci.com/gh/Leitirion/My-circleci-cypress-ui-automation/tree/master.svg?style=svg)](https://circleci.com/gh/Leitirion/My-circleci-cypress-ui-automation/tree/master)
 
 ### Table of Contents
 
