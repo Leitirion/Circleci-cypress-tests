@@ -24,7 +24,6 @@ workflows:
              - run:
                   name: Process code-coverage
                   command: julia -e 'using Pkg; cd(Pkg.dir("MyPkg")); Pkg.add("Coverage"); using Coverage; coverage = process_folder(); LCOV.writefile("coverage-lcov.info", coverage)'
-      
               - codecov/upload:
                   file: 'coverage-lcov.info'
                   token: '$CODECOV_TOKEN'
