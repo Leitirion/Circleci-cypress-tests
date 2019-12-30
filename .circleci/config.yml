@@ -16,7 +16,7 @@ workflows:
              - run:
                   name: Build failed
                   when: on_fail
-                  command: cd /root/project/cypress && find . -name 'last_screen*' -print0 | xargs -0 -I {} mv {}  last_screen.png ; 
+                  command: cd /root/project/cypress && find . -name 'last_screen*' -print0 | xargs -0 -I {} cp {}  last_screen.png ; 
              - store_artifacts:
                   path: /root/project/cypress/last_screen.png
                   destination: last_screen.png
@@ -46,7 +46,7 @@ workflows:
              - run:
                   name: Build failed
                   when: on_fail
-                  command: cd /root/project/cypress && find . -name 'last_screen*' -print0 | xargs -0 -I {} mv {}  last_screen.png ; 
+                  command: cd /root/project/cypress && find . -name 'last_screen*' -print0 | xargs -0 -I {} cp {}  last_screen.png ; 
              - store_artifacts:
                   path: /root/project/cypress/last_screen.png
                   destination: last_screen.png
