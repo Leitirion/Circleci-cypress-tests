@@ -8,7 +8,6 @@ workflows:
       - cypress/run:
           record: true
           store_artifacts: true
-          #working_directory: /cypress
           post-steps:
              - run:
                   name: Build Success
