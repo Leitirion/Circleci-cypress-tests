@@ -18,7 +18,7 @@ workflows:
                   when: on_fail
                   command: cd /root/project/cypress && find . -name 'last_screen*' -print0 | xargs -0 -I {} mv {}  last_screen.png ; 
              - store_artifacts:
-                  path: /root/project/cypress/screenshots/last_screen.png
+                  path: /root/project/cypress/last_screen.png
                   destination: last_screen.png
              - run:
                   name: Build failed
