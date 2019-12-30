@@ -17,8 +17,9 @@ workflows:
                   name: Build failed
                   when: on_fail
                   command: |
-                  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>" 
                   cd cypress/screenshots && find . -name 'last_screen*' -print0 | xargs -0 -I {} mv {}  last_screen.png ;
+                  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>" \
+                  
   
   nightly:
     triggers:
