@@ -16,7 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '@cypress/code-coverage/support'
-Cypress.on('test:after:run',(test, runnable) => {
+Cypress.on('test:after:run',() => {
     cy.screenshot('./last_screen', {capture:'runner'})
 })
 
