@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "cy:open": "cypress open",
     "cy:run": "cypress run",
     "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
   },
