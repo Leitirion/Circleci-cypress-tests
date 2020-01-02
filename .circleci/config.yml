@@ -6,7 +6,7 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          context: rpguia:URL
+          context: URL
           record: true
           store_artifacts: true
           post-steps:
