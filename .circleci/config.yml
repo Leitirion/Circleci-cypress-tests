@@ -10,23 +10,19 @@ workflows:
           record: true
           store_artifacts: true
           post-steps:
-             - run:
-                  name: Build Success
-                  when: on_success
-                  command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
-             - run:
-                  name: Build failed
-                  when: on_fail
-                  command:  convert -fuzz 1% -delay 4x1 cypress/screenshots/**/*.png -coalesce fails.gif
-             - store_artifacts:
-                  path: fails.gif
-                  destination: fails.gif
-             - run:
-                  name: Build failed
-                  when: on_fail
-                  command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendAnimation?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&animation=https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/fails.gif&width=1280&height=720&caption=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>" 
-                  
-  
+            - run:
+                name: Build Success
+                when: on_success
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: touch files.tmp | find cypress/screenshots/**/*.png | xargs -I '{}' bash -c 'echo  "{\"type\":\"photo\",\"media\":\"https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/root/project/{}\"}" >> files.tmp' ; printf [ >>.tmp; cat files.tmp | paste -s -d ',' - >> .tmp;printf ] >>.tmp && echo "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMediaGroup?chat_id=$TELEGRAM_CHAT_ID&disable_notification=false"  | xargs curl -g -F "media=<.tmp"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
+
   nightly:
     triggers:
       - schedule:
@@ -40,19 +36,15 @@ workflows:
           record: true
           store_artifacts: true
           post-steps:
-             - run:
-                  name: Build Success
-                  when: on_success
-                  command:   curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
-             - run:
-                  name: Build failed
-                  when: on_fail
-                  command:  convert -fuzz 1% -delay 4x1 cypress/screenshots/**/*.png -coalesce fails.gif
-             - store_artifacts:
-                  path: fails.gif
-                  destination: fails.gif
-             - run:
-                  name: Build failed
-                  when: on_fail
-                  command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendAnimation?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&animation=https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/fails.gif&width=1280&height=720&caption=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
-                  
+            - run:
+                name: Build Success
+                when: on_success
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: touch files.tmp | find cypress/screenshots/**/*.png | xargs -I '{}' bash -c 'echo  "{\"type\":\"photo\",\"media\":\"https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/root/project/{}\"}" >> files.tmp' ; printf [ >>.tmp; cat files.tmp | paste -s -d ',' - >> .tmp;printf ] >>.tmp && echo "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMediaGroup?chat_id=$TELEGRAM_CHAT_ID&disable_notification=false"  | xargs curl -g -F "media=<.tmp"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"

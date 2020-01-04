@@ -3,5 +3,5 @@ cypress.env.json
 cypress/videos
 cypress/screenshots
 fails.gif
-
+files.tmp
 
