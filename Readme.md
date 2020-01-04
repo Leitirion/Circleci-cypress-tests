@@ -29,6 +29,8 @@
  6. Add bot to your group or start chat with bot 
  7. Go to ```https://api.telegram.org/bot<your bot token>/getUpdates``` to get chatId and copy chatId with ```-```
  8. At ```Circleci > Settings > Build settings > Environment Variables at https://circleci.com/gh/<yourname>/<your_project_name>/edit#env-vars``` create TELEGRAM_CHAT_ID and copy your chatId
+ 9. Go to ```https://circleci.com/gh/organizations/<yourname>/settings#contexts```, create context ```project_context```
+ 10. At context create env ```URL``` with value ```https://google.com```
 
 ###  Running (locally / CI)
 1. Create file ```cypress.env.json``` in folder ```</Project_name>```. 
