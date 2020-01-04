@@ -6,7 +6,7 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          context: rpguia
+          context: project_context
           record: true
           store_artifacts: true
           post-steps:
@@ -33,6 +33,7 @@ workflows:
                 - master
     jobs:
       - cypress/run:
+          context: project_context
           record: true
           store_artifacts: true
           post-steps:
