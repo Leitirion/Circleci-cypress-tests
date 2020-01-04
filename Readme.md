@@ -23,7 +23,7 @@
 ### Installation
  1. Fork current repository 
  2. Clone repository with command ```git clone https://github.com/Leitirion/My-circleci-cypress-ui-automation.git```
- 3. Install node with ```npm i``` 
+ 3. Use ```npm install --only=prod``` 
  4. Go to https://t.me/botfather , create new bot by /newbot command
  5. At ```Circleci > Settings > Build settings > Environment Variables at https://circleci.com/gh/<yourname>/<your_project_name>/edit#env-vars``` create TELEGRAM_BOT_TOKEN and copy your token
  6. Add bot to your group or start chat with bot 
