@@ -3,7 +3,6 @@
 
 ### Table of Contents
 
-- Getting Started
 - Maintainers:
 
   [github.com/mikementor](https://github.com/mikementor)
@@ -16,14 +15,10 @@
 - Running (locally / CI)
 - Examples/How to write tests
 
-### Getting Started
-1. [About Cypress](https://docs.cypress.io/guides/overview/why-cypress.html#Setting-up-tests)
-2. [About Circleci](https://circleci.com/docs/2.0/getting-started/)
-
 ### Installation
  1. Fork current repository 
  2. Clone repository with command ```git clone https://github.com/Leitirion/My-circleci-cypress-ui-automation.git```
- 3. Use ```npm install --only=prod``` 
+ 3. Use ```npm install --only=prod``` (not work now)
  4. Go to https://t.me/botfather , create new bot by /newbot command
  5. At ```Circleci > Settings > Build settings > Environment Variables at https://circleci.com/gh/<yourname>/<your_project_name>/edit#env-vars``` create TELEGRAM_BOT_TOKEN and copy your token
  6. Add bot to your group or start chat with bot 
