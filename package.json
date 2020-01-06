@@ -1,0 +1,37 @@
+{
+    "name": "project1",
+    "version": "1.0.0",
+    "description": "My first Readme",
+    "main": "index.js",
+    "scripts": {
+        "cy:open": "cypress open",
+        "cy:run": "cypress run",
+        "pretest": "eslint --ignore-path .gitignore . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Leitirion/Project1.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Leitirion/Project1/issues"
+    },
+    "homepage": "https://github.com/Leitirion/Project1#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-cypress": "^2.8.1",
+        "husky": "^3.1.0"
+    },
+    "dependencies": {
+        "cypress": "^3.8.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run pretest",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}
