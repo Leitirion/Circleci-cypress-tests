@@ -7,7 +7,7 @@
     "test": "mocha",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore . --fix"
+    "pretest": "eslint --ignore-path .gitignore . --fix"
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,12 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@cypress/code-coverage": "^1.10.4",
-    "cypress": "^3.8.1",
     "eslint": "^6.8.0",
     "eslint-plugin-cypress": "^2.8.1",
-    "husky": "^3.1.0",
-    "istanbul-lib-coverage": "^3.0.0",
-    "nyc": "^15.0.0"
+    "husky": "^3.1.0"
+  },
+  "dependencies": {
+    "cypress": "^3.8.1"
   },
   "husky": {
     "hooks": {
