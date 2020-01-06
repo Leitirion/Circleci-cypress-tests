@@ -13,7 +13,7 @@
 
 
 
- 
-module.exports = (on) => {
-    on('task', require('@cypress/code-coverage/task'))
-  } 
+module.exports = () => {
+    // on is used to hook into various events Cypress emits
+    // config is the resolved Cypress config
+}

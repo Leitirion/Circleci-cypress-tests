@@ -13,7 +13,7 @@ workflows:
             - run:
                 name: Build Success
                 when: on_success
-                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
             - run:
                 name: Build failed
                 when: on_fail
@@ -21,7 +21,7 @@ workflows:
             - run:
                 name: Build failed
                 when: on_fail
-                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
 
   nightly:
     triggers:
@@ -40,7 +40,7 @@ workflows:
             - run:
                 name: Build Success
                 when: on_success
-                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> ok ✅"
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
             - run:
                 name: Build failed
                 when: on_fail
@@ -48,4 +48,4 @@ workflows:
             - run:
                 name: Build failed
                 when: on_fail
-                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>Build</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌ <a href='https://dashboard.cypress.io/projects/hx6dr1/runs'>dashboard</a>"
