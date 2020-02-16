@@ -18,7 +18,7 @@
 ### Installation
  1. Fork current repository
  2. Go to ```https://circleci.com/add-projects/gh/<YOURUSERNAME>``` or 
-https://circleci.com/dashboard -> add projects -> set up project (choose the fork)and click  'Start building'
+https://circleci.com/dashboard -> add projects -> set up project (choose the fork)and click  'Start building'.
  3. Clone repository with command ```git clone https://github.com/<YOUR_USER_NAME>/My-circleci-cypress-ui-automation.git```
  4. ```cd My-circleci-cypress-ui-automation```
  5. ```npm i```
@@ -45,5 +45,5 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 ### Examples/How to write tests
 In this repository in folder ```<project_name>/cypress/integration``` you cand find example test ```smokes.js```.
 This test visit ```https://google.com/``` and find in the title word ```Google```.
-If its true - test succeed, else failed.
+If its true then test succeed, else test failed.
  
