@@ -22,7 +22,7 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
  3. Clone repository with command ```git clone https://github.com/<YOUR_USER_NAME>/My-circleci-cypress-ui-automation.git```
  4. ```cd My-circleci-cypress-ui-automation```
  5. ```npm i```
- 6. Go to https://t.me/botfather , create new bot by ```/newbot``` command, remember TELEGRAM_BOT_TOKEN
+ 6. Go to https://t.me/botfather , create new bot by ```/newbot``` command, remember TELEGRAM_BOT_TOKEN.
  7. Add bot to your group or start chat with bot 
  8. Go to ```https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/getUpdates``` to get chatId and copy chatId with ```-```
  9. At ```Circleci > Settings  > Contexts (https://circleci.com/gh/organizations/<YOUR_USER_NAME>/settings#contexts)``` create context ```project_context``` (If you want to change name of context, then also change name at ```.circleci/config.yml ```)
@@ -35,10 +35,8 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 ###  Running (locally / CI)
 1. Create file ```cypress.env.json``` in root folder.
 2. Open file ```cypress.env.json``` and add 
-```{```
-   ``` "URL":"https://google.com"``` 
-```}```
-3. Run test on your local machine with command: ```npm run cy:run```
+```{ "URL":"https://google.com" }```
+3. Run test on your local machine with command: ```npm run cy:run```.
 4. If test succeed, then add all your changes, commit them and push to your repository on github.
 
 
