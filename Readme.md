@@ -13,7 +13,7 @@
 	 
 - Installation
 - Running (locally / CI)
-- Examples for tests
+- Examples and some tests
 
 ### Installation
  1. Fork current repository.
@@ -40,7 +40,7 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 4. If test succeed, then add all your changes, commit them and push to your repository on github.
 
 
-### Examples for tests
+### Examples and some tests
 In this repository in folder ```<project_name>/cypress/integration``` you cand find example test ```smokes.js```.
 This test visit ```https://google.com/``` and find in the title word ```Google```.
 If its true then test succeed, else test failed.
