@@ -37,7 +37,7 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 2. Open file ```cypress.env.json``` and add 
 ```{ "URL":"https://google.com" }```
 3. Run test on your local machine with command: ```npm run cy:run``` or open cypress menu with ```npm run cy:open```. Choose your test and then run it.
-4. If test succeed, then add all your changes, commit them and push to your repository on github.
+4. If test succeed, then add all (```gaa```) your changes, commit (```git -commit```) them and push (```ggp```) to your repository on github.
 
 
 ### Examples and tests
