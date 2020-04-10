@@ -35,7 +35,7 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 ###  Running (locally / CI)
 1. Create file ```cypress.env.json``` in project's root folder.
 2. Open file ```cypress.env.json``` and add ```{ "URL":"https://google.com" }```
-3. Run test on your local machine with command ```npm run cy:run```. (Also you can open cypress menu with npm run cy:open then use which test you need and run it.)
+3. Run test on your local machine with command ```npm run cy:run```. (Also you can open cypress menu with ```npm run cy:open``` then use which test you need and run it.)
 4. If test succeed, then add all (```gaa```) your changes, commit (```git -commit 'branch_name'```) them and push (```ggp```) to your repository on github.
 
 
