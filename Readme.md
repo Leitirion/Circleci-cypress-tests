@@ -41,6 +41,5 @@ https://circleci.com/dashboard -> add projects -> set up project (choose the for
 
 ### Examples and tests
 In this repository in folder ```<project_name>/cypress/integration``` you cand find example test: ```smokes.js```.
-This test visit URL ```https://google.com/``` and is looking for word ```Google``` in the title.
-If its true then test succeed, else test failed.
+This test visit URL ```https://google.com/``` and is looking for word ```Google``` in the title. (If you need, you can change this title to your value in URL). If its true then test succeed, else test failed.
  
