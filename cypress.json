@@ -1,3 +1,7 @@
 {
-  "projectId": "hx6dr1"
+  "projectId": "hx6dr1",
+  "env": {
+    "URL": "https://yandex.ru/",
+    "URL1": "https://google.com"
+  }
 }
